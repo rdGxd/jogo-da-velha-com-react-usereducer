@@ -4,17 +4,18 @@ import { GameContext } from '../../contexts/GameContext'; // Importa o contexto 
 
 export default function Square({ value, index }) {
   const {
-    state: { squares, isXNext, whoIsWinner },
-    dispatch,
+    state: { squares, isXNext, whoIsWinner }, // Obtém os estados 'squares', 'isXNext' e 'whoIsWinner' do contexto 'GameContext'
+    dispatch, // Obtém a função 'dispatch' para realizar ações no contexto
   } = useContext(GameContext);
 
   function handleClick() {
-    if (squares[index]) return;
-    if (whoIsWinner) return;
+    // Lida com o clique em um quadrado
+    if (squares[index]) return; // Retorna se o quadrado já foi preenchido
+    if (whoIsWinner) return; // Retorna se já houver um vencedor
 
-    const newSquares = [...squares];
-    newSquares[index] = isXNext ? 'X' : 'O';
-    dispatch({ type: 'UPDATE_SQUARES', payload: newSquares });
+    const newSquares = [...squares]; // Cria uma cópia dos quadrados
+    newSquares[index] = isXNext ? 'X' : 'O'; // Define 'X' ou 'O' no quadrado clicado
+    dispatch({ type: 'UPDATE_SQUARES', payload: newSquares }); // Atualiza os quadrados no contexto
   }
 
   return (

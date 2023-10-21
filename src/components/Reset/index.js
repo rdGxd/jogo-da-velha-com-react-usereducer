@@ -3,10 +3,10 @@ import { GameContext } from '../../contexts/GameContext'; // Importa o contexto 
 import './style.css'; // Importa um arquivo de estilo chamado 'style.css'
 
 export default function Reset() {
-  const { dispatch } = useContext(GameContext); // Obtém funções do contexto 'GameContext'
+  const { dispatch } = useContext(GameContext); // Obtém a função 'dispatch' do contexto 'GameContext'
 
   function handleClick() {
-    dispatch({ type: 'RESET' });
+    dispatch({ type: 'RESET' }); // Executa a ação de reset no contexto
   }
 
   return (
