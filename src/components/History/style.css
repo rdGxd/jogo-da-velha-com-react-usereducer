@@ -1,0 +1,14 @@
+/* History */
+.history {
+  text-align: center;
+  margin: 10px;
+}
+
+.history button {
+  background: yellow;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
