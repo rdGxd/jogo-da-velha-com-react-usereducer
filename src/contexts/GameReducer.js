@@ -5,7 +5,7 @@ export const INITIAL_STATE = {
   history: [],
 };
 
-export default function reducer(state, action) {
+export function reducer(state, action) {
   // action.type === UPDATE_SQUARES
   switch (action.type) {
     case 'UPDATE_SQUARES': {
